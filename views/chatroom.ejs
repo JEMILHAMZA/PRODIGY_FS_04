@@ -1,0 +1,117 @@
+<!-- views/chatroom.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/css/styles.css" />
+  <link rel="stylesheet" href="/css/chat.css">
+  <!-- Include Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <title>Chat App</title>
+</head>
+
+<body>
+ 
+
+  <!-- Update the navigation with a Font Awesome envelope icon and unread badge -->
+  <nav>
+    <a href="/">Home</a>
+    <a href="/api/auth/login">Login</a>
+    <a href="/">Register</a>
+  </nav>
+  
+  <!-- Add a container for the envelope and logout icons -->
+  <div class="header-icons">
+    <div class="notification">
+      <a href="#" id="notification-icon">
+        <i class="fas fa-envelope icon"></i> <!-- Font Awesome envelope icon -->
+        <span class="badge" id="unread-count">0</span> <!-- Unread message count -->
+      </a>
+    </div>
+    
+    <!-- Add logout icon with text -->
+    <a href="/api/auth/logout" class="logout">
+      <i class="fas fa-sign-out-alt"></i> Logout <!-- Font Awesome logout icon -->
+    </a>
+  </div>
+  
+  <h2>Chat Room - Welcome, <%= username %>!</h2>
+  
+  <div id="chat-container">
+  
+    <!-- Public Chat Section -->
+<div id="public-chat-container">
+  <h3>Public Chat</h3>
+  <ul id="messages"></ul>
+  <form id="message-form">
+    <input id="message-input" autocomplete="off" placeholder="Type a message..." />
+    <!-- Telegram-style Send Icon -->
+    <button id="send-button">
+      <i class="fas fa-paper-plane"></i> <!-- Font Awesome send icon -->
+    </button>
+  </form>
+</div>
+    
+    <!-- Container for User List and Private Chat -->
+    <div class="side-container">
+      <!-- User List for Private Chats -->
+      <div id="user-list">
+        <h3>Users</h3>
+        <ul>
+          <% users.forEach(function(user) { %>
+            
+              <% if (user.username !== username) { %>
+
+                <li id="user-<%= user.username %>" class="user-item" data-username="<%= user.username %>" >
+                  <div class="user-avatar">
+                    <i class="fas fa-user-circle"></i> <!-- Font Awesome avatar icon -->
+                  </div>
+                  <div class="user-details">
+                    <span class="username"><%= user.username %></span>
+                    <span class="status" id="status-<%= user.username %>">Offline</span> <!-- Status Indicator -->
+                  </div>
+                <!-- Button to start a private chat -->
+                
+              </li>
+              <% } %>
+            
+          <% }) %>
+        </ul>
+      </div>
+    
+     
+
+      <!-- Private Chat Section -->
+<div id="private-chat-container" style="display: none;">
+  <h3>Private Chat with <span id="private-chat-user"></span></h3>
+  <ul id="private-messages"></ul>
+  <form id="private-message-form">
+    <input id="private-message-input" autocomplete="off" placeholder="Type a message..." />
+    <!-- Telegram-style Send Icon -->
+    <button id="private-send-button">
+      <i class="fas fa-paper-plane"></i> <!-- Font Awesome send icon -->
+    </button>
+  </form>
+</div>
+    </div>
+  </div>
+  
+    
+    <input type="hidden" id="username" value="<%= username %>">
+  
+
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/js/chat.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+

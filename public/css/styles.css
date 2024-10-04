@@ -1,0 +1,160 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav {
+    background-color: #333;
+    padding: 1rem;
+    text-align: center;
+  }
+  
+  nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1.2rem;
+  }
+  
+  nav a:hover {
+    text-decoration: underline;
+  }
+  
+  h2 {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #333;
+    color: white;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+  }
+  
+  /* Form Styling */
+  form {
+    max-width: 400px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  form div {
+    margin-bottom: 15px;
+  }
+  
+  form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  form input[type="text"],
+  form input[type="email"],
+  form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  /* Chatroom Styling */
+  #chat-container {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  #messages {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 20px;
+    max-height: 300px;
+    overflow-y: scroll;
+    border: 1px solid #ccc;
+    padding: 10px;
+  }
+  
+  #messages li {
+    padding: 8px;
+    margin-bottom: 10px;
+    background-color: #f1f1f1;
+    border-radius: 4px;
+  }
+
+  #private-messages{
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 20px;
+    max-height: 300px;
+    overflow-y: scroll;
+    border: 1px solid #ccc;
+    padding: 10px;
+  }
+  #private-messages li{
+    padding: 8px;
+    margin-bottom: 10px;
+    background-color: #f1f1f1;
+    border-radius: 4px;
+  }
+  
+  #message-form {
+    display: flex;
+  }
+  
+  #message-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  #message-form button {
+    padding: 10px;
+    
+   
+    border: none;
+    border-radius: 4px;
+    margin-left: 10px;
+  }
+  
+  
+
+  #notification {
+    font-size: 1.2em;
+    color: red; /* Change this to your preferred color */
+    font-weight: bold;
+    margin-bottom: 10px; /* Spacing between notification and chat */
+  }
+  
+  #notification::before {
+    content: "Unread Messages: ";
+  }
+  
+
+
+  /* Add custom styles for online/offline status */
+.status {
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+.status.online {
+  color: green;
+}
+
+.status.offline {
+  color: red;
+}

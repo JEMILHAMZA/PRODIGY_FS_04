@@ -1,0 +1,44 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/css/styles.css" />
+  <link rel="stylesheet" href="/css/login.css">
+  <title>Chat App</title>
+</head>
+<body>
+  <nav>
+    <a href="/">Home</a>
+    <a href="/api/auth/login">Login</a>
+    <a href="/">Register</a>
+  </nav>
+
+  <div>
+    <h2>Register</h2>
+<form action="/api/auth/register" method="POST">
+  <div>
+    <label for="username">Username:</label>
+    <input type="text" name="username" id="username" required />
+  </div>
+  <div>
+    <label for="email">Email:</label>
+    <input type="email" name="email" id="email" required />
+  </div>
+  <div>
+    <label for="password">Password:</label>
+    <input type="password" name="password" id="password" required />
+  </div>
+  <button type="submit">Register</button>
+</form>
+
+
+  </div>
+
+  <footer>
+    <p>Real-Time Chat Application &copy; 2024</p>
+  </footer>
+</body>
+</html>

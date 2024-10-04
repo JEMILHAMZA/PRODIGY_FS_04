@@ -1,0 +1,279 @@
+/* Styling for the notification icon and badge */
+.notification {
+    position: relative;
+    display: inline-block;
+    margin-right: 20px; /* Adjust positioning */
+  }
+  
+  .notification .icon {
+    font-size: 24px; /* Set size of Font Awesome icon */
+    color: black; /* Change color if needed */
+  }
+  
+  .notification .badge {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    padding: 4px 6px;
+    border-radius: 50%;
+    background-color: red;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+  }
+  
+
+
+
+
+  /* Style for the logout link */
+.logout {
+    display: inline-flex;
+    align-items: center;
+    font-size: 16px;
+    text-decoration: none;
+    color: black; /* Adjust as needed */
+    margin-left: 20px;
+  }
+  
+  .logout i {
+    margin-right: 8px; /* Add space between the icon and text */
+    font-size: 18px;
+  }
+  
+  .logout:hover {
+    color: red; /* Example hover effect */
+  }
+  
+
+
+  /* Container for the envelope and logout icons */
+.header-icons {
+    display: flex;
+    justify-content: flex-end; /* Align to the right */
+    margin-right: 20px; /* Add some space on the right */
+    margin-top: 20px; /* Add space above */
+    margin-bottom: 20px; /* Add space below */
+  }
+  
+  /* Style for the envelope notification */
+  .notification {
+    margin-right: 20px; /* Add space between envelope and logout */
+  }
+  
+  .notification a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    position: relative;
+  }
+  
+  .badge {
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 5px;
+    font-size: 12px;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+  }
+  
+  /* Style for the logout link */
+  .logout {
+    display: inline-flex;
+    align-items: center;
+    font-size: 18px;
+    text-decoration: none;
+    color: black;
+  }
+  
+  .logout i {
+    margin-right: 8px; /* Add space between the icon and text */
+    font-size: 18px;
+  }
+  
+  .logout:hover {
+    color: red; /* Example hover effect */
+  }
+  
+
+
+
+
+  /* Default status styles */
+.status {
+    font-weight: bold;
+    margin-left: 10px;
+  }
+  
+  /* Offline status (light gray) */
+  .status.offline {
+    color: lightgray;
+  }
+  
+  /* Online status (green) */
+  .status.online {
+    color: green;
+  }
+  
+
+
+/* General styles for chat container */
+#chat-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Public chat container styling */
+  #public-chat-container {
+    flex-grow: 1;
+  }
+  
+  /* Side container layout for user list and private chat */
+  .side-container {
+    display: flex;
+    margin-top: 20px;
+  }
+  
+  /* User list styles */
+  #user-list {
+    flex: 1;
+    margin-right: 20px;
+  }
+  
+  .user-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .user-avatar {
+    flex-shrink: 0;
+  }
+  
+  .user-avatar i {
+    font-size: 40px; /* Size of the avatar icon */
+    color: #007bff; /* Icon color */
+  }
+  
+  /* User details styles */
+  .user-details {
+    flex-grow: 1;
+    margin-left: 10px;
+  }
+  
+  .username {
+    font-weight: bold;
+  }
+  
+  .status {
+    font-size: 0.85em;
+    color: gray;
+  }
+  
+  /* Chat button styles */
+  .start-chat {
+    padding: 5px 10px;
+    font-size: 0.9em;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .start-chat:hover {
+    background-color: #0056b3;
+  }
+  
+
+
+  /* Make user item clickable with a hover effect */
+.user-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #e0e0e0;
+    cursor: pointer; /* Make it clickable */
+  }
+  
+  .user-item:hover {
+    background-color: #f0f0f0;
+  }
+  
+
+
+
+  /* Style for the entire chat container */
+.side-container {
+    display: flex;
+    width: 100%; /* Full width initially */
+    transition: all 0.3s ease-in-out; /* Smooth transitions */
+  }
+  
+  /* User list initially takes full width */
+  #user-list {
+    flex: 1; /* Full width when no private chat is active */
+    padding: 10px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* Private chat initially hidden */
+  #private-chat-container {
+    display: none;
+    flex: 0; /* Hidden when no private chat is active */
+    padding: 10px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* When private chat is active */
+  .side-container.private-chat-active #user-list {
+    flex: 0.3; /* Shrink user list to 30% width */
+  }
+  
+  .side-container.private-chat-active #private-chat-container {
+    display: block;
+    flex: 0.7; /* Expand private chat to 70% width */
+  }
+  
+
+
+
+
+  /* Style the send button */
+#send-button, #private-send-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem; /* Increase the size of the icon */
+    color: #0088cc; /* Telegram blue color */
+    padding: 0 10px;
+    transition: color 0.3s ease;
+  }
+  
+  #send-button:hover, #private-send-button:hover {
+    color: #006699; /* Darker blue on hover */
+  }
+  
+  /* Adjust input and button alignment */
+  form {
+    display: flex;
+    align-items: center;
+  }
+  
+  #message-input, #private-message-input {
+    flex: 1; /* Takes up the rest of the space */
+    padding: 10px;
+    margin-right: 10px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+  }
+  
+  button i {
+    font-size: 1.5em;
+  }
+  
